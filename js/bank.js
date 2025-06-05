@@ -1,24 +1,26 @@
 class BankAccount {
+  #balance;
+
   constructor(startBalance) {
-    this.balance = startBalance;
+    this.#balance = startBalance;
   }
 
   getBalance() {
-    return this.balance;
+    return this.#balance;
   }
 
-  depisit(amount) {
-    this.balance += amount;
+  deposit(amount) {
+    this.#balance += amount;
   }
 
   withdraw(amount) {
-    this.balance -= amount;
+    this.#balance -= amount;
   }
 }
 const account1 = new BankAccount(1000);
 console.log(account1.getBalance());
 
-account1.depisit(500);
+account1.deposit(500);
 console.log(account1.getBalance());
 
 account1.withdraw(200);
